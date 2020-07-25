@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+}
+
+#main-doc {
+  display: grid;
+  grid-template-columns: 4fr 0.2fr 15fr;
+  grid-template-areas: "aside . section";
+  font-family: "Roboto", sans-serif;
+}
+
+#navbar {
+  border: 2px solid rgb(150, 149, 149);
+  grid-area: aside;
+  position: fixed;
+  top: 0;
+  padding-right: 103px;
+  background-color: white;
+  z-index: 2;
+}
+
+#main-doc > section {
+  grid-area: section;
+  background-color: white;
+}
+
+#last-td {
+  padding-bottom: 100%;
+}
+
+@media (max-width: 1700px) {
+  #main-doc > section {
+    position: absolute;
+    right: 0;
+    overflow: scroll;
+    width: 70%;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1300px) {
+  #main-doc > section {
+    position: absolute;
+    right: 0;
+    overflow: scroll;
+    width: 60%;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 990px) {
+  #main-doc {
+    display: grid;
+    grid-template:
+      "aside"
+      "section";
+  }
+  #navbar {
+    grid-area: aside;
+    position: static;
+    width: 100%;
+  }
+  #main-doc > section {
+    position: static;
+    grid-area: section;
+    width: 100%;
+    margin-top: 50px;
+  }
+  #last-td {
+    padding-bottom: 0%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 140%;
+}
+
+td {
+  line-height: 50px;
+  padding-left: 15%;
+  border-top: 2px solid rgb(150, 149, 149);
+  border-bottom: 2px solid rgb(150, 149, 149);
+  font-size: 16px;
+  color: rgb(100, 98, 98);
+}
+
+#navbar h2 {
+  padding-left: 21%;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+header {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+p,
+li {
+  font-size: 15px;
+  text-align: justify;
+  width: 95%;
+  color: rgb(100, 98, 98);
+}
+
+li,
+code {
+  line-height: 30px;
+}
+
+code {
+  display: inline-block;
+  width: 95%;
+  padding: 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  color: rgb(100, 98, 98);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(100, 98, 98);
+}
+
+a[target="_blank"] {
+  color: steelblue;
+  text-decoration: underline;
+}
